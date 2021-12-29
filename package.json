@@ -10,9 +10,10 @@
     "build": "run-s compile",
     "test": "npx jest",
     "eslint": "npx eslint -c .eslintrc.json --ext .ts ./src",
-    "ts.check": "tsc --skipLibCheck",
+    "ts.check": "tsc --skipLibCheck --noEmit",
     "lint": "run-s eslint ts.check",
-    "format": "npx prettier --config .prettierrc 'src/' --write"
+    "format": "npx prettier --config .prettierrc 'src/' --write",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-prettier": "4.0.0",
+    "husky": "7.0.4",
     "jest": "27.4.5",
     "npm-run-all": "4.1.5",
     "prettier": "2.5.1",
