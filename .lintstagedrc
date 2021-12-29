@@ -1,0 +1,10 @@
+{
+  "*.{ts,html,css}": [
+    "prettier --config .prettierrc --write",
+    "eslint -c .eslintrc.json"
+  ],
+  "**/*.ts": [
+    "tsc-files --noEmit --skipLibCheck",
+    "npm run test"
+  ]
+}
