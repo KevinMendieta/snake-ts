@@ -1,15 +1,17 @@
 import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
 import del from 'rollup-plugin-delete';
+import styles from 'rollup-plugin-styles';
 import { files, isDev } from './.buildHelpers/rollup';
 
 export default [
   {
     input: [...files('src/ts')],
     output: {
-      dir: 'public/js',
+      dir: 'public/dist',
       format: 'esm',
-      sourcemap: isDev()
+      sourcemap: isDev(),
+      assetFileNames: "styles.css",
     },
     plugins: [
       del({
@@ -19,6 +21,9 @@ export default [
         tsconfig: './tsconfig.json'
       }),
       isDev() ? null : terser(),
+      styles({
+        mode: "extract"
+      }),
     ]
   }
 ];
