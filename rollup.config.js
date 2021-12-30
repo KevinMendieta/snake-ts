@@ -1,6 +1,6 @@
 import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
-import clear from 'rollup-plugin-clear';
+import del from 'rollup-plugin-delete';
 import { files, isDev } from './.buildHelpers/rollup';
 
 export default [
@@ -12,14 +12,13 @@ export default [
       sourcemap: isDev()
     },
     plugins: [
-      clear({
-        targets: ['public/js'],
-        watch: true
+      del({
+        targets: 'public/js/*'
       }),
       typescript({
         tsconfig: './tsconfig.json'
       }),
-      isDev() ? null : terser()
+      isDev() ? null : terser(),
     ]
   }
 ];
