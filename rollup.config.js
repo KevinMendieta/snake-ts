@@ -11,19 +11,19 @@ export default [
       dir: 'public/dist',
       format: 'esm',
       sourcemap: isDev(),
-      assetFileNames: "styles.css",
+      assetFileNames: 'styles.css'
     },
     plugins: [
       del({
-        targets: 'public/js/*'
+        targets: 'public/dist/*'
       }),
       typescript({
         tsconfig: './tsconfig.json'
       }),
       isDev() ? null : terser(),
       styles({
-        mode: "extract"
-      }),
+        mode: 'extract'
+      })
     ]
   }
 ];
