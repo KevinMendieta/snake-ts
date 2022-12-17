@@ -13,8 +13,8 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier",
-    "plugin:import/typescript"
+    "plugin:import/typescript",
+    "prettier"
   ],
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -53,6 +53,6 @@
     "quotemark": "off",
     "import/no-default-export": "off",
     "semi": "off",
-    "prettier/prettier": 2
+    "prettier/prettier": ["error", { "trailingComma": "all" }]
   }
 }
