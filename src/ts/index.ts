@@ -1,13 +1,15 @@
 import '../css/index.css';
 
-const init = (): null => {
+const createCanvas = (): HTMLCanvasElement => {
   const container = document.getElementById('app');
 
-  const title = document.createElement('h1');
-  title.innerHTML = 'Snake Games';
-
-  container?.appendChild(title);
-  return null;
+  const canvas = document.createElement('canvas');
+  container?.appendChild(canvas);
+  return canvas;
 };
 
-document.body.onload = init();
+const preInit = () => {
+  const _canvas = createCanvas();
+};
+
+document.body.onload = preInit;
