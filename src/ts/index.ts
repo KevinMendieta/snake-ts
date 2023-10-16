@@ -1,15 +1,9 @@
 import '../css/index.css';
 
-const createCanvas = (): HTMLCanvasElement => {
-  const container = document.getElementById('app');
-
-  const canvas = document.createElement('canvas');
-  container?.appendChild(canvas);
-  return canvas;
-};
+import { $ } from './helpers/dom';
 
 const preInit = () => {
-  const _canvas = createCanvas();
+  const _canvas = $.getElement('#main-canvas');
 };
 
 document.body.onload = preInit;
